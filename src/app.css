@@ -1,0 +1,49 @@
+* {
+  scroll-behavior: smooth;
+  --normal_green: #1cc54f;
+}
+
+
+body {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',
+    Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  transition: .5s;
+  color: white;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  background: #00000000;
+  justify-content: center;
+}
+
+nav > a:hover {
+  color: var(--normal_green);
+  transition: .5s;
+}
+
+nav a {
+  padding: .5rem;
+  padding-top: 1rem;
+  display: inline-block;
+}
+
+.content {
+  padding: 1rem;
+}
