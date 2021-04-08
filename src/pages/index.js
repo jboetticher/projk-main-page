@@ -1,7 +1,8 @@
 import React from 'react'
+import GlitchTitle from '../components/GlitchTitle';
 
 export default () => (
   <div style={{ textAlign: 'center' }}>
-    <h1>Welcome to React-Static</h1>
+    <GlitchTitle />
   </div>
 )

@@ -1,9 +1,8 @@
 import React from 'react'
 import { Root, Routes, addPrefetchExcludes } from 'react-static'
-//
 import { Link, Router } from 'components/Router'
 
-import './app.css'
+import './css/app.css';
 
 function App() {
   return (

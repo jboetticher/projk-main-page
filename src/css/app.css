@@ -1,6 +1,7 @@
+@import "colors.css";
+
 * {
   scroll-behavior: smooth;
-  --normal_green: #1cc54f;
 }
 
 
@@ -11,7 +12,7 @@ body {
   font-size: 16px;
   margin: 0;
   padding: 0;
-  background-color: #222;
+  background-color: var(--projk_background);
   color: white;
 }
 
@@ -34,7 +35,7 @@ nav {
 }
 
 nav > a:hover {
-  color: var(--normal_green);
+  color: var(--projk_green);
   transition: .5s;
 }
 

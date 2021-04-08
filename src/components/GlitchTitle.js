@@ -1,9 +1,10 @@
-import React from "React";
+import React from "react";
+import '../css/glitch.css';
 
 let GlitchTitle = props => {
     return (
-        <div>
-            bro
+        <div className="glitch" data-text={props.text ? props.text : "PROJK"}>
+            {props.text ? props.text : "PROJK"}
         </div>
     );
 }
