@@ -1,0 +1,54 @@
+@import "./colors.css";
+@import "./animated-circles.css";
+
+.jkhead-container {
+    max-width: 600px;
+}
+
+.head-panel {
+    --width: 125px;
+    --height: 350px;
+
+    width: var(--width);
+    height: var(--height);
+    overflow: hidden;
+}
+
+.j-head-1 > img {
+    height: var(--height);
+    width: auto;
+    max-width: 1000px;
+}
+
+.k-head-1 > img {
+    height: var(--height);
+    width: auto;
+    max-width: 1000px;
+}
+
+.j-head-2 > img {
+    height: var(--height);
+    width: auto;
+    max-width: 1000px;
+    position: relative;
+    right: var(--width);
+}
+
+.k-head-2 > img {
+    height: var(--height);
+    width: auto;
+    max-width: 1000px;
+    position: relative;
+    right: var(--width);
+}
+
+@keyframes floaty {
+
+    0% {
+        background-color: var(--projk_purple);
+    }
+
+    100% {
+        background-color: var(--projk_background);
+    }
+}

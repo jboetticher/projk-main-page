@@ -2,9 +2,32 @@ import React from 'react'
 import GlitchTitle from '../components/GlitchTitle';
 import InvisibleCard from '../components/InvisibleCard';
 import '../css/k-theme.css';
+import '../css/jkheads.css';
+
+const list = [];
+for (let i = 0; i < 12; i++) {
+  list.push(<li key={i} />);
+}
 
 export default () => (
   <>
+    <div className="jkhead-backdrop area">
+      <ul className="circles">{list}</ul>
+      <div className="jkhead-container row mx-auto py-4">
+        <div className="j-head-1 head-panel mx-auto">
+          <img src="./home/jeremy-head.png" />
+        </div>
+        <div className="k-head-2 head-panel mx-auto">
+          <img src="./home/kevin-head.png" />
+        </div>
+        <div className="k-head-1 head-panel mx-auto">
+          <img src="./home/kevin-head.png" />
+        </div>
+        <div className="j-head-2 head-panel mx-auto">
+          <img src="./home/jeremy-head.png" />
+        </div>
+      </div>
+    </div>
     <div style={{ textAlign: 'center' }}>
       <GlitchTitle />
     </div>
