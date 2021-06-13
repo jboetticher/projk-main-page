@@ -1,6 +1,7 @@
 import React from 'react'
 import GlitchTitle from '../components/GlitchTitle';
 import InvisibleCard from '../components/InvisibleCard';
+import ProjectCard from '../components/ProjectCard';
 import '../css/k-theme.css';
 import '../css/jkheads.css';
 
@@ -14,17 +15,13 @@ export default () => (
     <div className="jkhead-backdrop area">
       <ul className="circles">{list}</ul>
       <div className="jkhead-container row mx-auto py-4">
-        <div className="j-head-1 head-panel mx-auto">
-          <img src="./home/jeremy-head.png" />
-        </div>
-        <div className="k-head-2 head-panel mx-auto">
-          <img src="./home/kevin-head.png" />
-        </div>
-        <div className="k-head-1 head-panel mx-auto">
-          <img src="./home/kevin-head.png" />
-        </div>
-        <div className="j-head-2 head-panel mx-auto">
-          <img src="./home/jeremy-head.png" />
+        <div className="mx-auto d-flex">
+          <div className="j-head-1 head-panel">
+            <img src="./home/jeremy-head.png" />
+          </div>
+          <div className="k-head-2 head-panel">
+            <img src="./home/kevin-head.png" />
+          </div>
         </div>
       </div>
     </div>
@@ -35,7 +32,7 @@ export default () => (
       <InvisibleCard right>
         <h3>We make stuff.</h3>
         <p>
-          And we don't always know what we're doing. But hey, does anyone?
+          And we put it here. Not all projks will be sustained forever, but not all of them were meant to be.
         </p>
       </InvisibleCard>
       <InvisibleCard />
@@ -54,6 +51,9 @@ export default () => (
           GOD CHURCH
         </button>
       </InvisibleCard>
+      {/*
+        <ProjectCard col={6} projectName="DicTater" description="Dude poggers" image="https://assets.obior.com/uploads/ckeditor/pictures/5015/content_e4b00bab.png" />
+      */}
     </div>
 
   </>

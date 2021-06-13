@@ -6,8 +6,8 @@
 }
 
 .head-panel {
-    --width: 125px;
-    --height: 350px;
+    --width: 175px;
+    --height: 475px;
 
     width: var(--width);
     height: var(--height);
