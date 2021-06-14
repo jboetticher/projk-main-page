@@ -14,7 +14,7 @@ let ProjectCard = props => {
       }
       <div className="d-flex card-body">
         <div>
-          <h3 mb-4 className={props.jeremy ? "j-h3" : ""}>
+          <h3 mb-4 className={props.jeremy ? "jp" : ""}>
             {props.title}
           </h3>
           <ProjkChips attributes={props.attributes} />

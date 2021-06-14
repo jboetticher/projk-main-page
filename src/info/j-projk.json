@@ -19,7 +19,9 @@
         "Hyper Projk",
         "On Hold"
       ]
-    },
+    }
+  ],
+  "other": [
     {
       "title": "MoonJelly",
       "description": "An extendible chrome extension that interacts with Ocean Protocol's data economy. It makes it easy to mint datatokens, get datatoken alerts, view & search the market, and see your datatoken wallet.",
@@ -40,6 +42,17 @@
         "Mini Projk",
         "Finished",
         "For Kicks"
+      ]
+    },
+    {
+      "title": "Node Visualizer",
+      "description": "Our first foray into the hackathon world. The video is cooler than the project. Too bad we didn't win a tesla.",
+      "link": "https://devpost.com/software/node-visualizer",
+      "image": "https://cdn.discordapp.com/attachments/313820457256353794/853789039688941598/nodevisualizer.png",
+      "attributes": [
+          "Minor Projk",
+          "Finished",
+          "J & K"
       ]
     }
   ]
