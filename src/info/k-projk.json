@@ -1,0 +1,63 @@
+{
+    "main": [
+        {
+            "title": "Prayer Machine",
+            "description": "Uses DeepAI's image generation to visualize images of the one and only. Now with sin[e].",
+            "link": "https://crabb.club/",
+            "image": "https://cdn.discordapp.com/attachments/313820457256353794/853788923616559104/church.png",
+            "attributes": [
+                "For Kicks"
+            ]
+        },
+        {
+            "title": "P5.js Generative Art",
+            "description": "Generative art created using the p5.js Javascript framework. Currently all hanging out in the repo.",
+            "link": "https://github.com/pisslake/p5js-testground",
+            "image": "https://cdn.discordapp.com/attachments/313820457256353794/853789056541917244/perlincave.gif",
+            "attributes": [
+                "For Kicks"
+            ]
+        },
+        {
+            "title": "Nannou Generative Art",
+            "description": "Generative art creayed using the Nannou framework, written in Rust. Runs much better than p5.js (but unfortunately has a harder time displaying natively on web)",
+            "link": "https://github.com/pisslake/nannou-testground",
+            "image": "https://cdn.discordapp.com/attachments/313820457256353794/853790365643702272/noisefield.gif",
+            "attributes": [
+                "For Kicks"
+            ]
+        },
+        {
+            "title": "HarkTV",
+            "description": "An online-ticketed event platform powered by blockchain. After winning the Theta Hackathon, HarkTV will be moving on to ticketed events (powered by NFTs) while using the Theta technology to raise money for charity.",
+            "link": "https://hark.tv",
+            "image": "https://pbs.twimg.com/media/E0P_rJMWQAcntRk?format=png",
+            "attributes": [
+                "Venture",
+                "J & K"
+            ]
+        },
+        {
+            "title": "MoonJelly",
+            "description": "An extendible chrome extension that interacts with Ocean Protocol's data economy. It makes it easy to mint datatokens, get datatoken alerts, view & search the market, and see your datatoken wallet.",
+            "link": "https://devpost.com/software/moonjelly",
+            "image": "https://camo.githubusercontent.com/3d7811724b4abaff04c55bfe53148462d6cdc0f02046203c477576f9dd585d8a/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f62346968665f7537484a552f6d617872657364656661756c742e6a7067",
+            "attributes": [
+                "Major Projk",
+                "Finished",
+                "J & K"
+            ]
+        },
+        {
+            "title": "Node Visualizer",
+            "description": "Our first foray into the hackathon world. The video is cooler than the project. Too bad we didn't win a tesla.",
+            "link": "https://devpost.com/software/node-visualizer",
+            "image": "https://cdn.discordapp.com/attachments/313820457256353794/853789039688941598/nodevisualizer.png",
+            "attributes": [
+                "Minor Projk",
+                "Finished",
+                "J & K"
+            ]
+        }
+    ]
+}
