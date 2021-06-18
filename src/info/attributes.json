@@ -31,6 +31,10 @@
     "color": "#1cc54f",
     "tooltip": "This projk is completed, and work probably won't continue."
   },
+  "Deceased": {
+    "color": "#d70000",
+    "tooltip": "No longer exists. Don't cry for me Argentina..."
+  },
   "J & K": {
     "color": "#684663",
     "tooltip": "Made in equal parts by both Jeremy and Kevin."

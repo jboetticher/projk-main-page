@@ -46,13 +46,24 @@
     },
     {
       "title": "Node Visualizer",
-      "description": "Our first foray into the hackathon world. The video is cooler than the project. Too bad we didn't win a tesla.",
+      "description": "Our first foray into the hackathon world: a node visualizer for Monday.com. The video is cooler than the project. Too bad we didn't win a tesla.",
       "link": "https://devpost.com/software/node-visualizer",
       "image": "https://cdn.discordapp.com/attachments/313820457256353794/853789039688941598/nodevisualizer.png",
       "attributes": [
           "Minor Projk",
           "Finished",
           "J & K"
+      ]
+    },
+    {
+      "title": "Quiznomer",
+      "description": "The first website we ever made: a knock-off buzzfeed quizzes website. Hosting quizzes like 'What Disney Princess are You?' while returning only Ratatouille rats, or 'How Much Are You Worth (in Kidneys)?' Sadly, a database error removed this from existence.",
+      "link": "https://web.archive.org/web/20210123194034/https://quiznomer.com/",
+      "image": "https://promo.dictatergame.com/images/quiznomerScreenshot.png",
+      "attributes": [
+        "Major Projk",
+        "J & K",
+        "Deceased"
       ]
     }
   ]
