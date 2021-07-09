@@ -45,6 +45,16 @@
       ]
     },
     {
+      "title": "SLIK | Lisk NFT Leveling",
+      "description": "An extension of Lisk's example NFT project to include firebase accounts, essential NFT metadata, and NFT leveling.",
+      "link": "https://devpost.com/software/slik-extended-lisk-nft-project",
+      "image": "https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/597/547/datas/gallery.jpg",
+      "attributes": [
+        "Minor Projk",
+        "Finished"
+      ]
+    },
+    {
       "title": "Node Visualizer",
       "description": "Our first foray into the hackathon world: a node visualizer for Monday.com. The video is cooler than the project. Too bad we didn't win a tesla.",
       "link": "https://devpost.com/software/node-visualizer",
