@@ -55,6 +55,16 @@
       ]
     },
     {
+      "title": "Construction Supply Chain on Algorand",
+      "description": "A proof of concept supply chain made with Reach and compiled into Algorand. First finished Algorand Project for a tiny hackathon.",
+      "link": "https://youtu.be/Ump_oMLroSo",
+      "image": "https://i.imgur.com/Aj88D5s.png",
+      "attributes": [
+        "Mini Projk",
+        "Finished"
+      ]
+    },
+    {
       "title": "Node Visualizer",
       "description": "Our first foray into the hackathon world: a node visualizer for Monday.com. The video is cooler than the project. Too bad we didn't win a tesla.",
       "link": "https://devpost.com/software/node-visualizer",
