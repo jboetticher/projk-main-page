@@ -8,10 +8,10 @@ for (let i = 0; i < 12; i++) {
   list.push(<li key={i} />);
 }
 
-const kevinNormal = "/home/kevin_normal.png";
-const kevinHover = "/home/kevin_hover.png";
-const jeremyNormal = "/home/jeremy_normal.png";
-const jeremyHover = "/home/jeremy_hover.png";
+const kevinNormal = "/home/knormal.png";
+const kevinHover = "/home/khover.png";
+const jeremyNormal = "/home/jnormal.png";
+const jeremyHover = "/home/jhover.png";
 
 export default props => {
   let [centerText, setCenterText] = useState('PROJK');
