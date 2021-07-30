@@ -1,54 +1,62 @@
 @import "./colors.css";
 @import "./animated-circles.css";
 
-.jkhead-container {
-    max-width: 600px;
+body {
+    overflow-x: hidden;
+    width: 100%;
 }
 
-.head-panel {
-    --width: 175px;
-    --height: 475px;
-
-    width: var(--width);
-    height: var(--height);
-    overflow: hidden;
+.home-img-button {
+    height: 80%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    max-width: 50%;
+    transition: all 0.5s ease 0s;
 }
 
-.j-head-1 > img {
-    height: var(--height);
-    width: auto;
-    max-width: 1000px;
+.home-img-button > img {
+    max-height: 560px;
+    max-width: 460px;    
+    height: 100%;
+    width: 100%;
 }
 
-.k-head-1 > img {
-    height: var(--height);
-    width: auto;
-    max-width: 1000px;
+.k-home-img-button {
+    right: 0;
 }
 
-.j-head-2 > img {
-    height: var(--height);
-    width: auto;
-    max-width: 1000px;
-    position: relative;
-    right: var(--width);
+.k-home-img-button:hover {
+    transform: scale(1.2);
 }
 
-.k-head-2 > img {
-    height: var(--height);
-    width: auto;
-    max-width: 1000px;
-    position: relative;
-    right: var(--width);
+.j-home-img-button {
+    left: 0;
+    transform: scaleX(-1);
 }
 
-@keyframes floaty {
+.j-home-img-button:hover {
+    transform: scaleX(-1.2) scaleY(1.2);
+}
 
-    0% {
-        background-color: var(--projk_purple);
+
+@media(min-width: 1200px) {
+    .j-home-img-button {
+        margin-left: 32px;
     }
 
-    100% {
-        background-color: var(--projk_background);
+    .k-home-img-button {
+        margin-right: 32px;
+    }
+}
+
+@media(max-width: 900px) {
+    .home-img-button {
+        opacity: 0%;
+        pointer-events: none;
+    }
+
+    .top-nav {
+        font-size: 32px;
     }
 }

@@ -1,7 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import GlitchTitle from '../components/GlitchTitle';
-import InvisibleCard from '../components/InvisibleCard';
-import ProjectCard from '../components/ProjectCard';
 import '../css/k-theme.css';
 import '../css/jkheads.css';
 
@@ -10,51 +8,41 @@ for (let i = 0; i < 12; i++) {
   list.push(<li key={i} />);
 }
 
-export default () => (
-  <>
-    <div className="jkhead-backdrop area">
-      <ul className="circles">{list}</ul>
-      <div className="jkhead-container row mx-auto py-4">
-        <div className="mx-auto d-flex">
-          <div className="j-head-1 head-panel">
-            <img src="./home/jeremy-head.png" />
-          </div>
-          <div className="k-head-2 head-panel">
-            <img src="./home/kevin-head.png" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style={{ textAlign: 'center' }}>
-      <GlitchTitle />
-    </div>
-    <div className="row tight-margin">
-      <InvisibleCard right>
-        <h3>We make stuff.</h3>
-        <p>
-          And we put it here. Not all projks will be sustained forever, but not all of them were meant to be.
-        </p>
-      </InvisibleCard>
-      <InvisibleCard />
-      <InvisibleCard col={12}>
-        <h3 className="mb-4">Aforementioned stuff:</h3>
-        <button className="btn btn-primary mr-2" onClick={() => window.open("https://quiznomer.com/")}>
-          QUIZNOMER
-        </button>
-        <button className="btn btn-primary mr-2" onClick={() => window.open("https://dictatergame.com/")}>
-          DICTATER
-        </button>
-        <button className="btn btn-primary mr-2" onClick={() => window.open("https://devpost.com/software/moonjelly")}>
-          MOONJELLY
-        </button>
-        <button className="btn btn-primary mr-2" onClick={() => window.open("https://crabb.club/")}>
-          GOD CHURCH
-        </button>
-      </InvisibleCard>
-      {/*
-        <ProjectCard col={6} projectName="DicTater" description="Dude poggers" image="https://assets.obior.com/uploads/ckeditor/pictures/5015/content_e4b00bab.png" />
-      */}
-    </div>
+const kevinNormal = "/home/kevin_normal.png";
+const kevinHover = "/home/kevin_hover.png";
+const jeremyNormal = "/home/jeremy_normal.png";
+const jeremyHover = "/home/jeremy_hover.png";
 
-  </>
-);
+export default props => {
+  let [centerText, setCenterText] = useState('PROJK');
+
+  return (
+    <>
+      <div className="jkhead-backdrop area">
+        <ul className="circles">{list}</ul>
+      </div>
+      <div class="k-home-img-button home-img-button">
+        <a href="/kevin">
+          <img src={kevinNormal}
+            onMouseEnter={e => { e.currentTarget.src = kevinHover; setCenterText("KEVIN"); }}
+            onMouseLeave={e => { e.currentTarget.src = kevinNormal; setCenterText("PROJK"); }}
+          />
+        </a>
+      </div>
+      <div class="j-home-img-button home-img-button">
+        <a href="/jeremy">
+          <img src={jeremyNormal}
+            onMouseEnter={e => { e.currentTarget.src = jeremyHover; setCenterText("JEREMY"); }}
+            onMouseLeave={e => { e.currentTarget.src = jeremyNormal; setCenterText("PROJK"); }}
+          />
+        </a>
+      </div>
+      <div style={{ textAlign: 'center', position: 'absolute', top: '50%', left: '0', right: '0', marginTop: '-100px' }}>
+        <GlitchTitle text={centerText} />
+      </div>
+      <div className="row tight-margin">
+      </div>
+
+    </>
+  );
+};
