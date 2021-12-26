@@ -1,13 +1,14 @@
 {
   "main": [
     {
-      "title": "HarkTV",
-      "description": "An online-ticketed event platform powered by blockchain. After winning the Theta Hackathon, HarkTV will be moving on to ticketed events (powered by NFTs) while using the Theta technology to raise money for charity.",
-      "link": "https://hark.tv",
-      "image": "https://pbs.twimg.com/media/E0P_rJMWQAcntRk?format=png",
+      "title": "Hexareign",
+      "description": "A prototype NFT game built on various fringe EVMs. Take over tiles, upgrade them, and harvest HEXR. Built with Solidity & Chainsafe's Unity SDK.",
+      "link": "https://hexareign.com/",
+      "image": "https://cdn.discordapp.com/attachments/905350529239101473/908623458672455710/Hexareign_Background.png",
       "attributes": [
-        "Venture",
-        "J & K"
+        "Major Projk",
+        "On Hold",
+        "bL0cKchAiN!"
       ]
     },
     {
@@ -30,7 +31,20 @@
       "attributes": [
         "Major Projk",
         "Finished",
-        "J & K"
+        "J & K",
+        "bL0cKchAiN!"
+      ]
+    },
+    {
+      "title": "HarkTV",
+      "description": "An online-ticketed event platform powered by blockchain. After winning the Theta Hackathon, HarkTV will be moving on to ticketed events (powered by NFTs) while using the Theta technology to raise money for charity.",
+      "link": "https://hark.tv",
+      "image": "https://pbs.twimg.com/media/E0P_rJMWQAcntRk?format=png",
+      "attributes": [
+        "Venture",
+        "J & K",
+        "Deceased",
+        "bL0cKchAiN!"
       ]
     },
     {
@@ -51,7 +65,8 @@
       "image": "https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/597/547/datas/gallery.jpg",
       "attributes": [
         "Minor Projk",
-        "Finished"
+        "Finished",
+        "bL0cKchAiN!"
       ]
     },
     {
@@ -61,7 +76,8 @@
       "image": "https://i.imgur.com/Aj88D5s.png",
       "attributes": [
         "Mini Projk",
-        "Finished"
+        "Finished",
+        "bL0cKchAiN!"
       ]
     },
     {
