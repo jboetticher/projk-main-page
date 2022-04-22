@@ -59,6 +59,17 @@
       ]
     },
     {
+      "title": "ERC721 Scanner",
+      "description": "A frontend in React & a backend in Express that scans the Ropsten network for recently minted ERC721 projects. Uses EIP-165 to identify ERC721, caviats commented in the code.",
+      "link": "https://github.com/jboetticher/ERC721-Scanner",
+      "image": "https://raw.githubusercontent.com/jboetticher/ERC721-Scanner/master/screenshot.png",
+      "attributes": [
+        "Micro Projk",
+        "Finished",
+        "bL0cKchAiN!"
+      ]
+    },
+    {
       "title": "SLIK | Lisk NFT Leveling",
       "description": "An extension of Lisk's example NFT project to include firebase accounts, essential NFT metadata, and NFT leveling.",
       "link": "https://devpost.com/software/slik-extended-lisk-nft-project",

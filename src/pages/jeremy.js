@@ -4,14 +4,6 @@ import GlitchTitle from '../components/GlitchTitle';
 import ProjectCard from '../components/ProjectCard';
 import '../css/j-theme.css';
 
-/**
- *     <div className="background-video">
-      <iframe frameborder="0" height="100%" width="100%"
-        src="https://youtube.com/embed/w1o4O2SfQ5g?autoplay=1&controls=0&showinfo=0&autohide=1">
-      </iframe>
-    </div>
- */
-
 let JeremyPage = props => {
 
   console.log(JInfo.main);
