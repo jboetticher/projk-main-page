@@ -15,7 +15,7 @@
       "title": "DicTater | 4X Potato Strategy",
       "description": "DicTater is a strategic micromanaging game that has constantly changing borders and wars. You will be forced to tap to run your administration, defend from enemy raids, and get saved from assassins! And of course, there are many, many, many  potatoes.",
       "link": "https://www.dictatergame.com/",
-      "image": "https://assets.obior.com/uploads/photo/file/159182/large_f2c78b82.png",
+      "image": "https://cdn.discordapp.com/attachments/617838827980980225/969291430101139526/Poster_Image.png",
       "attributes": [
         "Hyper Projk",
         "On Hold"
@@ -88,6 +88,16 @@
       "attributes": [
         "Mini Projk",
         "Finished",
+        "bL0cKchAiN!"
+      ]
+    },
+    {
+      "title": "Fractionalized Real Estate Platform",
+      "description": "A front+backend for a fractionalized real estate platform; EVM compatibility pending. Built with react, typescript firebase, and solidity.",
+      "link": "https://propex.uk/",
+      "image": "https://cdn.discordapp.com/attachments/617838827980980225/969291131974217788/unknown.png",
+      "attributes": [
+        "Major Projk",
         "bL0cKchAiN!"
       ]
     },
