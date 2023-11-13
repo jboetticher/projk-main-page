@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  --projk_background: #222;
+  --projk_foreground: #111;
+  --projk_green: #1cc54f;
+  --projk_higreen: #20e65c;
+  --projk_purple: #684663;
+}
+
+body {
+  background-color: var(--projk_background);
+}
