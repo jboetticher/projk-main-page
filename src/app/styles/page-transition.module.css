@@ -1,0 +1,67 @@
+.loadingAnimationContainer {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+
+    transform: rotate(30deg) scale(2);
+    animation: displayNone 1.5s 0s forwards;
+}
+
+.blackOut {
+    background-color: var(--projk_background);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    animation: displayNone 0.5s forwards;
+}
+
+.diagonalLine {
+    position: absolute;
+    width: 0;
+    height: 100vh;
+    top: 0;
+}
+
+.purple {
+    background-color: var(--projk_purple);
+    left: 50%;
+}
+
+.green {
+    background-color: var(--projk_higreen);
+    right: 50%;
+}
+
+.purple.animate {
+    animation: shootAcross 1s forwards, wipeOutLeft 1s 0.5s forwards;
+}
+
+.green.animate {
+    animation: shootAcross 1s forwards, wipeOutRight 1s 0.5s forwards;
+}
+
+@keyframes shootAcross {
+    to {
+        width: 100vw;
+    }
+}
+
+@keyframes wipeOutRight {
+    to {
+        right: 150vw;
+    }
+}
+
+@keyframes wipeOutLeft {
+    to {
+        left: 150vw;
+    }
+}
+
+@keyframes displayNone {
+    to {
+        display: none;
+    }
+}
