@@ -1,6 +1,6 @@
 'use client'
 
-import styles from "../styles/squircles.module.css";
+import styles from "../_styles/squircles.module.css";
 import { useEffect, useState } from 'react';
 
 export default function SquircleBackdrop() {

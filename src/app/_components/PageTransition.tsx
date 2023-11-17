@@ -1,4 +1,4 @@
-import styles from "../styles/page-transition.module.css";
+import styles from "../_styles/page-transition.module.css";
 
 export default function SquircleBackdrop() {
 

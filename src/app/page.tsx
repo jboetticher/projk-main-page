@@ -1,16 +1,17 @@
-import styles from './styles/page.module.css';
+import styles from './_styles/page.module.css';
 
-import SquircleBackdrop from './components/SquircleBackdrop';
-import PageTransition from './components/PageTransition';
-import glitchStyle from './styles/glitch.module.css';
-import Crab from './components/Crab';
+import SquircleBackdrop from './_components/SquircleBackdrop';
+import PageTransition from './_components/PageTransition';
+import glitchStyle from './_styles/glitch.module.css';
+import Crab from './_components/Crab';
+import Link from 'next/link';
 
 export default function Home() {
 
   const links = [
-    { link: '#', title: 'Portfolio' },
-    { link: '#', title: 'Writings' },
-    { link: '#', title: 'Achievements' },
+    { link: 'portfolio', title: 'Portfolio' },
+    { link: 'writings', title: 'Writings' },
+    { link: 'achievements', title: 'Achievements' },
   ];
 
   return (
@@ -24,7 +25,7 @@ export default function Home() {
         <p className={styles.subtitle}>I'm Jeremy. I have projects.</p>
         <div className={styles.linkContainer}>
           {links.map((link, index) => (
-            <a
+            <Link
               key={index}
               href={link.link}
               className={`${glitchStyle.glitch} ${styles.link}`}
@@ -32,7 +33,7 @@ export default function Home() {
               data-text={link.title}
             >
               {link.title}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

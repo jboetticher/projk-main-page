@@ -1,4 +1,4 @@
-import styles from "../styles/crab.module.css";
+import styles from "../_styles/crab.module.css";
 
 export default function Crab() {
 
