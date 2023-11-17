@@ -3,6 +3,7 @@ import styles from './styles/page.module.css';
 import SquircleBackdrop from './components/SquircleBackdrop';
 import PageTransition from './components/PageTransition';
 import glitchStyle from './styles/glitch.module.css';
+import Crab from './components/Crab';
 
 export default function Home() {
 
@@ -17,7 +18,7 @@ export default function Home() {
       <PageTransition />
       <SquircleBackdrop />
       <div className={styles.center}>
-        <h1 className={glitchStyle.glitch} data-text={"PROJK"} style={{ width: '323px', fontSize: '100px' }}>
+        <h1 className={glitchStyle.glitch} data-text={"PROJK"} style={{ width: '323px', fontSize: '100px', userSelect: 'none' }}>
           PROJK
         </h1>
         <p className={styles.subtitle}>I'm Jeremy. I have projects.</p>
@@ -35,6 +36,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <Crab />
     </main>
   );
 }

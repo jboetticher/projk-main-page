@@ -15,6 +15,7 @@
     color: white;
     padding-top: 2em;
     padding-bottom: 2em;
+    user-select: none;
 }
 
 .linkContainer {
