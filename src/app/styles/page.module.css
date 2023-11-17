@@ -1,3 +1,45 @@
 .center {
-    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.subtitle {
+    text-transform: uppercase;
+    /* Makes the text all caps */
+    letter-spacing: 0.3em;
+    /* Spaces out the letters significantly */
+    text-align: center;
+    /* Centers the text */
+    color: white;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.linkContainer {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.link {
+    opacity: 0;
+    animation: fadeInLeft 1s forwards;
+    display: inline-block;
+    font-size: 24px;
+    padding-bottom: 1em;
+    /* Additional styling for your links */
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
