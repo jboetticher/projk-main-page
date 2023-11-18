@@ -1,13 +1,30 @@
+.mainBox {
+    overflow: hidden;
+    padding: 0 20px 0 20px;
+    max-height: 100vh;
+}
+
 .titleBox {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .title {
     font-size: 60px;
     letter-spacing: 0.25em;
-    margin-top: 0.8em;
-    margin-bottom: 0.8em;
+}
+
+.scrollCardsContainer {
+    /* Calculate max height based off of the title */
+    max-height: calc(100vh - (72.5px + 60px) + 24px);
+    overflow-y: auto;
+}
+
+.mainGrid {
+    /* 72.5px = title text, 60px = margin, 24px = padding offset??? */
+    max-height: calc(100vh - (72.5px + 60px) );
 }
