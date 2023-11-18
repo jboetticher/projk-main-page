@@ -18,13 +18,33 @@
     letter-spacing: 0.25em;
 }
 
+.subtitle {
+    text-transform: uppercase;
+    /* Makes the text all caps */
+    letter-spacing: 0.3em;
+    /* Spaces out the letters significantly */
+    text-align: center;
+    /* Centers the text */
+    color: white;
+    padding-bottom: 20px;
+    user-select: none;
+}
+
 .scrollCardsContainer {
     /* Calculate max height based off of the title */
     max-height: calc(100vh - (72.5px + 60px) + 24px);
     overflow-y: auto;
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.scrollCardsContainer::-webkit-scrollbar {
+    display: none;
 }
 
 .mainGrid {
     /* 72.5px = title text, 60px = margin, 24px = padding offset??? */
-    max-height: calc(100vh - (72.5px + 60px) );
+    max-height: calc(100vh - (72.5px + 60px));
+    
 }
