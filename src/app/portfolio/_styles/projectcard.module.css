@@ -1,6 +1,13 @@
 .projectCard {
     background-color: var(--projk_foreground);
+    height: calc((100vh - 160px - (16px * 3)) / 3)
 }
+
+@media (max-height: 916px) {
+    .projectCard {
+        height: calc((100vh - 160px - (16px * 2)) / 2)
+    }
+  }
 
 .text {
     color: white;

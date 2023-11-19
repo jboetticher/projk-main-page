@@ -24,14 +24,18 @@ export default function Portfolio() {
           PORTFOLIO
         </h1>
       </div>
-      <Grid container spacing={3} className={style.mainGrid}>
-        <Grid item xs={12} md={4}> {/* Featured Projects */}
+      <Grid container spacing={2} className={style.mainGrid}>
+        <Grid item container xs={12} md={4} spacing={2}> {/* Featured Projects */}
           <Grid item xs={12}>
             <h4 className={style.subtitle}>FEATURED</h4>
           </Grid>
-          {three.map((_, index) => exampleCard(index))}
+          {three.map((_, index) =>
+            <Grid item sm={12}>
+              {exampleCard(index)}
+            </Grid>
+          )}
         </Grid>
-        <Grid item container xs={12} md={8} spacing={3} className={style.scrollCardsContainer}> {/* Scrollable Project Cards */}
+        <Grid item container xs={12} md={8} spacing={2} className={style.scrollCardsContainer}> {/* Scrollable Project Cards */}
           <Grid item xs={12}> {/* Filter Bar */}
             <TextField /* ... */ />
             <Select /* ... */ />
