@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Chip, Typography } from '@mui/material';
+import { Card, CardContent, CardMedia, Chip, Tooltip, Typography } from '@mui/material';
 import style from '../_styles/projectcard.module.css';
 
 interface PortfolioCardProps {
@@ -26,25 +26,37 @@ export default function ProjectCard({ title, tags, imageUrl, description }: Port
             {title}
           </h5>
         </div>
-        {tags.map(tag => (
-          <Chip
-            key={tag}
-            label={tag}
-            sx={{
-              margin: '6px 6px 6px 0',
-              backgroundColor: tagToColor(tag).color,
-              color: 'white',
-              fontSize: '0.75rem', // Smaller text
-              padding: '2px 4px', // Reduced padding
-              height: '24px', // Smaller height if needed
+        {tags.map(tag => {
+          const tagData = tagToColor(tag);
+          return (
+            <Tooltip key={tag} title={tagData.tooltip}
+              sx={{
+                typography: 'body2', // Use a typography variant, or use custom styles
+                '& .MuiTooltip-tooltip': {
+                  fontFamily: 'Lexend, sans-serif'
+                }
+              }}
+            >
+              <Chip
+                label={tag}
+                sx={{
+                  margin: '6px 6px 6px 0',
+                  backgroundColor: tagData.color,
+                  color: 'white',
+                  fontSize: '0.75rem', // Smaller text
+                  padding: '2px 4px', // Reduced padding
+                  height: '24px', // Smaller height if needed
 
-              '& .MuiChip-label': { // Targeting the label
-                fontSize: '0.75rem', // Smaller text
-                padding: '0 4px', // Custom padding for the label
-              },
-            }}
-          />
-        ))}
+                  '& .MuiChip-label': { // Targeting the label
+                    fontSize: '0.75rem', // Smaller text
+                    padding: '0 4px', // Custom padding for the label
+                  },
+                }}
+              />
+            </Tooltip>
+          )
+        }
+        )}
         <p className={style.text}>{description}</p>
       </CardContent>
     </Card>
@@ -72,8 +84,6 @@ function stringToColor(str: string): string {
     const value = (hash >> (i * 8)) & 0xFF;
     color += ('00' + value.toString(16)).substr(-2);
   }
-
-  console.log('color:', color)
 
   return color;
 }
