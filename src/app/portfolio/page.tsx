@@ -1,8 +1,11 @@
+'use client'
+
 import PageTransition from "../_components/PageTransition";
 import glitchStyle from "../_styles/glitch.module.css";
 import style from "./_styles/page.module.css";
-import { Card, Grid, TextField, Select, CardContent, CardMedia } from '@mui/material';
+import { Grid, TextField, Select } from '@mui/material';
 import ProjectCard from "./_components/ProjectCard";
+import FilterBar from "./_components/FilterBar";
 
 export default function Portfolio() {
   const three = [0, 0, 0];
@@ -30,18 +33,17 @@ export default function Portfolio() {
             <h4 className={style.subtitle}>FEATURED</h4>
           </Grid>
           {three.map((_, index) =>
-            <Grid item sm={12}>
+            <Grid item sm={12} key={index}>
               {exampleCard(index)}
             </Grid>
           )}
         </Grid>
         <Grid item container xs={12} md={8} spacing={2} className={style.scrollCardsContainer}> {/* Scrollable Project Cards */}
-          <Grid item xs={12}> {/* Filter Bar */}
-            <TextField /* ... */ />
-            <Select /* ... */ />
+          <Grid item xs={12}>
+            <FilterBar />
           </Grid>
           {twelve.map((_, index) =>
-            <Grid item sm={12} md={6}>
+            <Grid item sm={12} md={6} key={index}>
               {exampleCard(index)}
             </Grid>
           )}
