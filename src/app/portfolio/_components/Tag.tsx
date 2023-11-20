@@ -5,23 +5,23 @@ const TAG_TO_COLOR: { [key: string]: { color: string; tooltip: string; }; } = {
     "color": "#315f26",
     "tooltip": "A venture & company separate from the members of Projk."
   },
-  "Hyper Projk": {
+  "HYPER": {
     "color": "#ff8000",
     "tooltip": "This took or is taking years to complete."
   },
-  "Major Projk": {
+  "MAJOR": {
     "color": "#a335ee",
     "tooltip": "This took a couple of months to complete."
   },
-  "Minor Projk": {
+  "MINOR": {
     "color": "#0070dd",
     "tooltip": "This took a few weeks to a month to complete."
   },
-  "Mini Projk": {
+  "MINI": {
     "color": "#20e65c",
     "tooltip": "This took a few days to a week to complete."
   },
-  "Micro Projk": {
+  "MICRO": {
     "color": "#dbdbdb",
     "tooltip": "This took less than a day to complete!"
   },

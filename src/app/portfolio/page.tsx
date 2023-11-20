@@ -3,13 +3,22 @@
 import PageTransition from "../_components/PageTransition";
 import glitchStyle from "../_styles/glitch.module.css";
 import style from "./_styles/page.module.css";
-import { Grid, TextField, Select } from '@mui/material';
+import { Grid } from '@mui/material';
 import ProjectCard from "./_components/ProjectCard";
 import FilterBar from "./_components/FilterBar";
+import { useEffect, useState } from "react";
 
 export default function Portfolio() {
   const three = [0, 0, 0];
   const twelve = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+  const [projects, setProjects] = useState<MultiProjectQuery[]>([]);
+  useEffect(() => {
+    fetch('/api/projects')
+      .then(response => response.json())
+      .then(data => setProjects(data))
+      .catch(error => console.error('Error fetching projects:', error));
+  }, []);
 
   const exampleCard = (index: number) =>
     <ProjectCard key={index}
@@ -42,13 +51,26 @@ export default function Portfolio() {
           <Grid item xs={12}>
             <FilterBar />
           </Grid>
-          {twelve.map((_, index) =>
+          {projects?.map((p, index) =>
             <Grid item sm={12} md={6} key={index}>
-              {exampleCard(index)}
+              <ProjectCard key={index}
+                title={p.title}
+                tags={p.tags}
+                imageUrl={p.image}
+                description={p.tagline}
+              />
             </Grid>
           )}
         </Grid>
       </Grid>
     </main>
   );
+}
+
+type MultiProjectQuery = {
+  id: string;
+  title: string;
+  tags: string[];
+  tagline: string;
+  image: string;
 }

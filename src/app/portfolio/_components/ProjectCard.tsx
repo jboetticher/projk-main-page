@@ -9,8 +9,6 @@ interface PortfolioCardProps {
   description: string;
 }
 
-
-
 export default function ProjectCard({ title, tags, imageUrl, description }: PortfolioCardProps) {
   return (
     <Card className={style.projectCard}>
@@ -27,7 +25,7 @@ export default function ProjectCard({ title, tags, imageUrl, description }: Port
             {title}
           </h5>
         </div>
-        {tags.map(tag => <Tag tag={tag} />)}
+        {tags.map((tag, i) => <Tag key={i} tag={tag} />)}
         <p className={style.text}>{description}</p>
       </CardContent>
     </Card>
