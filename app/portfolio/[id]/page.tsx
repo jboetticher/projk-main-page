@@ -2,6 +2,7 @@ import { sql } from "@vercel/postgres";
 import { Grid } from "@mui/material";
 import { Tag } from "../_components/Tag";
 import glitchStyle from "../../_styles/glitch.module.css";
+import { MDXRemote } from 'next-mdx-remote/rsc'
 
 type ProjectQuery = {
   id: string;
@@ -28,7 +29,7 @@ const ProjectPage = async ({ params }: { params: { id: string } }) => {
           <a href="link">
             Link goes here yay
           </a>
-          <p>{data.description}</p>
+          <MDXRemote source={data.description} />
         </Grid>
         <Grid item xs={12} sm={6}>
           <img alt={data.title} src={data.images[0]} style={{ borderRadius: '16px' }} />
