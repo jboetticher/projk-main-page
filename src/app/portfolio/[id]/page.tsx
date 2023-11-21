@@ -1,4 +1,7 @@
 import { sql } from "@vercel/postgres";
+import { Grid } from "@mui/material";
+import { Tag } from "../_components/Tag";
+import glitchStyle from "../../_styles/glitch.module.css";
 
 type ProjectQuery = {
   id: string;
@@ -10,21 +13,31 @@ type ProjectQuery = {
 }
 
 const ProjectPage = async ({ params }: { params: { id: string } }) => {
-
-  // const DICTATER = 'dictater';
   const data: ProjectQuery = (await sql`SELECT * FROM projects WHERE id = ${params.id}`).rows[0] as ProjectQuery;
 
   return (
-    <div>
-      <h1>{data.title}</h1>
-      <img alt={data.title} src={data.images[0]} />
-      <div>
-        {data.tags.map((x, i) => <p key={i}>{x}</p>)}
-      </div>
-      <p>{data.description}</p>
-    </div>
+    <main style={{ overflow: 'hidden' }}>
+      <Grid container spacing={2} sx={{ padding: '16px', paddingLeft: '32px', paddingRight: '32px' }}>
+        <Grid item xs={12} sm={6}>
+          <h1 style={{ fontSize: '40px', color: 'white' }}>
+            {data.title}
+          </h1>
+          <div>
+            {data.tags.map((t, i) => <Tag key={i} tag={t} />)}
+          </div>
+          <a href="link">
+            Link goes here yay
+          </a>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <img alt={data.title} src={data.images[0]} style={{ borderRadius: '16px' }} />
+        </Grid>
+        <Grid item xs={12}>
+          <p>{data.description}</p>
+        </Grid>
+      </Grid>
+    </main>
   );
-
 
 };
 
