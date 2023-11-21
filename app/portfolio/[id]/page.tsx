@@ -3,11 +3,10 @@ import { Grid } from "@mui/material";
 import { Tag } from "../_components/Tag";
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
-import glitchStyle from "../../_styles/glitch.module.css";
 import style from "./page.module.css";
 import { JSX, ClassAttributes, HTMLAttributes } from "react";
 import PageTransition from "../../_components/PageTransition";
-import Link from "next/link";
+import Navigation from "../../_components/Navigation";
 
 const MDXComponents = {
   h1: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
@@ -33,13 +32,10 @@ const ProjectPage = async ({ params }: { params: { id: string } }) => {
   // TODO: replace Grid with static elements
 
   return (
-    <main style={{ overflow: 'hidden', padding: '16px', paddingLeft: '32px', paddingRight: '32px' }}>
+    <main style={{ overflow: 'hidden' }}>
       <PageTransition />
-      <header className={style.headerContainer}>
-        <Link href='/portfolio' className={style.headerLink}>PORTFOLIO</Link>
-        <Link href='/' className={style.headerLink}>HOME</Link>
-      </header>
-      <Grid container spacing={2}>
+      <Navigation />
+      <Grid container spacing={2} sx={{ padding: '16px', paddingLeft: '32px', paddingRight: '32px' }}>
         <Grid item xs={12} sm={6}>
           <h1 style={{ fontSize: '40px', color: 'white', marginBottom: '12px' }}>
             {data.title}
@@ -55,7 +51,15 @@ const ProjectPage = async ({ params }: { params: { id: string } }) => {
           </div>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <img alt={data.title} src={data.images[0]} style={{ borderRadius: '16px' }} />
+          <img
+            alt={data.title}
+            src={data.images[0]}
+            style={{
+              width: '100%', // Makes the image scale to the width of the Grid item
+              height: 'auto', // Maintains the aspect ratio of the image
+              borderRadius: '16px'
+            }}
+          />
         </Grid>
       </Grid>
     </main>

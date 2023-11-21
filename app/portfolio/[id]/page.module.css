@@ -1,21 +1,3 @@
-.headerContainer {
-    flex-direction: row;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 32px;
-}
-
-.headerLink {
-    color: white;
-    text-decoration: none;
-    letter-spacing: 0.2em;
-    transition: 500ms;
-}
-
-.headerLink:hover {
-    color: var(--projk_green)
-}
-
 .linkButton {
     background-color: var(--projk_green);
     color: white;
