@@ -28,12 +28,10 @@ const ProjectPage = async ({ params }: { params: { id: string } }) => {
           <a href="link">
             Link goes here yay
           </a>
+          <p>{data.description}</p>
         </Grid>
         <Grid item xs={12} sm={6}>
           <img alt={data.title} src={data.images[0]} style={{ borderRadius: '16px' }} />
-        </Grid>
-        <Grid item xs={12}>
-          <p>{data.description}</p>
         </Grid>
       </Grid>
     </main>
