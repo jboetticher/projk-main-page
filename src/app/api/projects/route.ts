@@ -7,7 +7,5 @@ export async function GET(request: Request) {
     return NextResponse.json(result.rows, { status: 200 });
   } catch (error: any) {
     return NextResponse.json({ error }, { status: 500 });
-  } finally {
-    sql.end();
   }
 }

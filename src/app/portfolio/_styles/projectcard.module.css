@@ -1,5 +1,4 @@
 .projectCard {
-    background-color: var(--projk_foreground);
     height: calc((100vh - 160px - (16px * 3)) / 3)
 }
 
