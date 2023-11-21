@@ -23,7 +23,7 @@ export default function Portfolio() {
   const exampleCard = (index: number) =>
     <ProjectCard key={index}
       id='dictater'
-      title='DicTater | 4X Potato Strategy'
+      title='Doinktater | 4X Potato Strategy'
       tags={['C#', 'Hyper Projk']}
       imageUrl='https://ksr-ugc.imgix.net/assets/027/592/492/c58e1f28c1eec30d77b7d968bf716a3f_original.png?ixlib=rb-4.1.0&crop=faces&w=1024&h=576&fit=crop&v=1577397933&auto=format&frame=1&q=92&s=778a0882f2e3032c450a98c0204d5624'
       description="DicTater is a strategic micromanagement game about facist potatoes with over 10k downloads."
@@ -61,6 +61,11 @@ export default function Portfolio() {
                 imageUrl={p.image}
                 description={p.tagline}
               />
+            </Grid>
+          )}
+          {twelve.map((_, index) =>
+            <Grid item sm={6} key={index}>
+              {exampleCard(index)}
             </Grid>
           )}
         </Grid>
