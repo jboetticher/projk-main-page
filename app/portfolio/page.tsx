@@ -38,7 +38,7 @@ export default function Portfolio() {
         </h1>
       </div>
       <Grid container spacing={2} className={style.mainGrid}>
-        <Grid item container xs={12} md={4} spacing={2}> {/* Featured Projects */}
+        <Grid item container xs={12} md={4} xl={3} spacing={2}> {/* Featured Projects */}
           <Grid item xs={12}>
             <h4 className={style.subtitle}>FEATURED</h4>
           </Grid>
@@ -48,12 +48,12 @@ export default function Portfolio() {
             </Grid>
           )}
         </Grid>
-        <Grid item container xs={12} md={8} spacing={2} className={style.scrollCardsContainer}> {/* Scrollable Project Cards */}
+        <Grid item container xs={12} md={8} xl={9} spacing={2} className={style.scrollCardsContainer}> {/* Scrollable Project Cards */}
           <Grid item xs={12}>
             <FilterBar />
           </Grid>
           {projects?.map((p, index) =>
-            <Grid item sm={12} md={6} key={index}>
+            <Grid item sm={12} md={6} xl={4} key={index}>
               <ProjectCard key={index}
                 id={p.id}
                 title={p.title}
@@ -64,7 +64,7 @@ export default function Portfolio() {
             </Grid>
           )}
           {twelve.map((_, index) =>
-            <Grid item sm={6} key={index}>
+            <Grid item sm={12} md={6} xl={4} key={index}>
               {exampleCard(index)}
             </Grid>
           )}
