@@ -34,6 +34,26 @@
     /* Additional styling for your links */
 }
 
+.iconContainer {
+    display: flex;
+    justify-content: center; /* Horizontally centers the flex items */
+    gap: 20px;
+    /* Add any other necessary styles */
+}
+
+.iconButton {
+    color: white;
+    transition: 500ms;
+}
+
+.iconButton.green:hover {
+    color: var(--projk_green);
+}
+
+.iconButton.purple:hover {
+    color: var(--projk_purple);
+}
+
 @keyframes fadeInLeft {
     from {
         opacity: 0;

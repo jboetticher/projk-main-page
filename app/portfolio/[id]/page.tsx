@@ -59,6 +59,7 @@ const ProjectPage = async ({ params }: { params: { id: string } }) => {
               height: 'auto', // Maintains the aspect ratio of the image
               borderRadius: '16px'
             }}
+            key={data.title}
           />
         </Grid>
       </Grid>

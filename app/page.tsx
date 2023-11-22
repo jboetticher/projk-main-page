@@ -6,6 +6,9 @@ import glitchStyle from './_styles/glitch.module.css';
 import Crab from './_components/Crab';
 import Link from 'next/link';
 
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+
 export default function Home() {
 
   const links = [
@@ -35,6 +38,22 @@ export default function Home() {
               {link.title}
             </Link>
           ))}
+        </div>
+        <div className={styles.iconContainer}>
+          <Link
+            href='https://github.com/jboetticher'
+            className={`${styles.link} ${styles.iconButton} ${styles.green}`}
+            style={{ animationDelay: `${0.8 + 3 * 0.5}s` }}
+          >
+            <GitHubIcon fontSize='large' />
+          </Link>
+          <Link
+            href='https://www.linkedin.com/in/jeremy-boetticher/'
+            className={`${styles.link} ${styles.iconButton} ${styles.purple}`}
+            style={{ animationDelay: `${0.8 + 3 * 0.5}s`}}
+          >
+            <LinkedInIcon fontSize='large' />
+          </Link>
         </div>
       </div>
       <Crab />
