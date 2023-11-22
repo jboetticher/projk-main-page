@@ -14,7 +14,7 @@ export default function Home() {
   const links = [
     { link: 'portfolio', title: 'Portfolio' },
     { link: 'writings', title: 'Writings' },
-    { link: 'achievements', title: 'Achievements' },
+    { link: 'skills', title: 'Skills' },
   ];
 
   return (

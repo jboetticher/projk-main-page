@@ -6,19 +6,11 @@ import style from "./_styles/page.module.css";
 import { Grid } from '@mui/material';
 import ProjectCard from "./_components/ProjectCard";
 import FilterBar from "./_components/FilterBar";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Portfolio() {
   const three = [0, 0, 0];
   const twelve = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
-  const [projects, setProjects] = useState<MultiProjectQuery[]>([]);
-  useEffect(() => {
-    fetch('/api/projects')
-      .then(response => response.json())
-      .then(data => setProjects(data))
-      .catch(error => console.error('Error fetching projects:', error));
-  }, []);
 
   const exampleCard = (index: number) =>
     <ProjectCard key={index}
@@ -29,16 +21,45 @@ export default function Portfolio() {
       description="DicTater is a strategic micromanagement game about facist potatoes with over 10k downloads."
     />
 
+  // Query for projects
+  const [projects, setProjects] = useState<MultiProjectQuery[]>([]);
+  useEffect(() => {
+    fetch('/api/projects')
+      .then(response => response.json())
+      .then(data => setProjects(data))
+      .catch(error => console.error('Error fetching projects:', error));
+  }, []);
+
+  // Scrollbar effect
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const handleScroll = () => {
+    if (gridRef.current) {
+      const position = gridRef.current.scrollTop;
+
+      // Is in pixels
+      setScrollPosition(position);
+    }
+  };
+  useEffect(() => {
+    const gridElement = gridRef.current;
+    gridElement?.addEventListener('scroll', handleScroll);
+    return () => { gridElement?.removeEventListener('scroll', handleScroll); };
+  }, []);
+
+
   return (
     <main className={style.mainBox}> {/* Added horizontal padding */}
       <PageTransition />
-      <div className={style.titleBox}>
-        <h1 className={`${glitchStyle.glitch} ${style.title}`} data-text={"PORTFOLIO"}>
-          PORTFOLIO
-        </h1>
-      </div>
       <Grid container spacing={2} className={style.mainGrid}>
         <Grid item container xs={12} md={4} xl={3} spacing={2}> {/* Featured Projects */}
+          <Grid item xs={12} sx={{ height: '120px' }}>
+            <div className={style.titleBox}>
+              <h1 className={`${glitchStyle.glitch} ${style.title}`} data-text={"PORTFOLIO"}>
+                PORTFOLIO
+              </h1>
+            </div>
+          </Grid>
           <Grid item xs={12}>
             <h4 className={style.subtitle}>FEATURED</h4>
           </Grid>
@@ -48,7 +69,10 @@ export default function Portfolio() {
             </Grid>
           )}
         </Grid>
-        <Grid item container xs={12} md={8} xl={9} spacing={2} className={style.scrollCardsContainer}> {/* Scrollable Project Cards */}
+        <Grid item container xs={12} md={8} xl={9} spacing={2}
+          className={style.scrollCardsContainer}
+          ref={gridRef}
+        > {/* Scrollable Project Cards */}
           <Grid item xs={12}>
             <FilterBar />
           </Grid>

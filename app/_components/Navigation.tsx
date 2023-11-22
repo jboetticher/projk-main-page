@@ -26,7 +26,7 @@ export default function Navigation() {
       <PathnameLink href='/'>HOME</PathnameLink>
       <PathnameLink href='/portfolio'>PORTFOLIO</PathnameLink>
       <PathnameLink href='/writings'>WRITINGS</PathnameLink>
-      <PathnameLink href='/achievements'>ACHIEVEMENTS</PathnameLink>
+      <PathnameLink href='/skills'>SKILLS</PathnameLink>
     </header>
   )
 }
