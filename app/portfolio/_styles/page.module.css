@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
     padding-top: 15px;
     padding-bottom: 30px;
 }
@@ -32,7 +31,8 @@
 
 .scrollCardsContainer {
     /* Calculate max height based off of the title */
-    max-height: calc(100vh - (72.5px + 60px) + 24px);
+    /* max-height: calc(100vh - (72.5px + 60px) + 24px); */
+    max-height: 100vh;
     overflow-y: auto;
 
     /* Hide scrollbar for IE, Edge, and Firefox */
@@ -45,5 +45,5 @@
 
 .mainGrid {
     /* 72.5px = title text, 60px = margin, 24px = padding offset??? */
-    max-height: calc(100vh - (62.5px + 60px));
+    /* max-height: calc(100vh - (62.5px + 60px)); */
 }

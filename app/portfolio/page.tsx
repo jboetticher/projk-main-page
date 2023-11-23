@@ -30,23 +30,43 @@ export default function Portfolio() {
       .catch(error => console.error('Error fetching projects:', error));
   }, []);
 
-  // Scrollbar effect
+  // Scrollbar data
   const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const gridRef = useRef<HTMLDivElement>(null);
   const handleScroll = () => {
-    if (gridRef.current) {
-      const position = gridRef.current.scrollTop;
-
-      // Is in pixels
-      setScrollPosition(position);
-    }
+    if (gridRef.current) setScrollPosition(gridRef.current.scrollTop);
   };
   useEffect(() => {
     const gridElement = gridRef.current;
     gridElement?.addEventListener('scroll', handleScroll);
-    return () => { gridElement?.removeEventListener('scroll', handleScroll); };
+
+    const handleResize = () => { setScreenWidth(window.innerWidth) };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      gridElement?.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
+  // Calculate title box width
+  const IS_LARGE = screenWidth > 1535;
+  const TITLE_BOX_WIDTH = IS_LARGE ? 
+    100 - Math.min(scrollPosition, 75) :
+    100 - Math.min(scrollPosition, 70);
+
+  // Calculate font related
+  const LARGE_SUBTRACTION_AMOUNT = 15 * ((2080 - screenWidth) / 544);
+  const SMALL_SUBTRACTION_AMOUNT = 25 * ((1535 - screenWidth) / 635);
+  const FONT_SIZE = IS_LARGE ?
+    60 - Math.max(0, LARGE_SUBTRACTION_AMOUNT * (Math.min(scrollPosition, 70) / 70)) :
+    60 - Math.max(0, SMALL_SUBTRACTION_AMOUNT * (Math.min(scrollPosition, 70) / 70));
+
+  /*
+  1536px width: 60 -> 45px 
+  2080px width: 60 -> 60px
+  */
 
   return (
     <main className={style.mainBox}> {/* Added horizontal padding */}
@@ -54,8 +74,11 @@ export default function Portfolio() {
       <Grid container spacing={2} className={style.mainGrid}>
         <Grid item container xs={12} md={4} xl={3} spacing={2}> {/* Featured Projects */}
           <Grid item xs={12} sx={{ height: '120px' }}>
-            <div className={style.titleBox}>
-              <h1 className={`${glitchStyle.glitch} ${style.title}`} data-text={"PORTFOLIO"}>
+            <div className={style.titleBox} style={{ width: `calc(${TITLE_BOX_WIDTH}vw - 16px)` }}>
+              <h1 data-text={"PORTFOLIO"}
+                className={`${glitchStyle.glitch} ${style.title}`}
+                style={{ fontSize: `${FONT_SIZE}px` }}
+              >
                 PORTFOLIO
               </h1>
             </div>
@@ -73,6 +96,9 @@ export default function Portfolio() {
           className={style.scrollCardsContainer}
           ref={gridRef}
         > {/* Scrollable Project Cards */}
+          <Grid item xs={12}>
+            <div style={{ height: '104px' }} />
+          </Grid>
           <Grid item xs={12}>
             <FilterBar />
           </Grid>
