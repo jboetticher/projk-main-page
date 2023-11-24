@@ -31,8 +31,9 @@ export default function Portfolio() {
   }, []);
 
   // Scrollbar data
+  const hasWindow = () => { return typeof window === 'object' }
   const [scrollPosition, setScrollPosition] = useState<number>(0);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(hasWindow() ? window.innerWidth: 1080);
   const gridRef = useRef<HTMLDivElement>(null);
   const handleScroll = () => {
     if (gridRef.current) setScrollPosition(gridRef.current.scrollTop);
@@ -41,6 +42,7 @@ export default function Portfolio() {
     const gridElement = gridRef.current;
     gridElement?.addEventListener('scroll', handleScroll);
 
+    setScreenWidth(window.innerWidth);
     const handleResize = () => { setScreenWidth(window.innerWidth) };
     window.addEventListener('resize', handleResize);
 
@@ -62,11 +64,6 @@ export default function Portfolio() {
   const FONT_SIZE = IS_LARGE ?
     60 - Math.max(0, LARGE_SUBTRACTION_AMOUNT * (Math.min(scrollPosition, 70) / 70)) :
     60 - Math.max(0, SMALL_SUBTRACTION_AMOUNT * (Math.min(scrollPosition, 70) / 70));
-
-  /*
-  1536px width: 60 -> 45px 
-  2080px width: 60 -> 60px
-  */
 
   return (
     <main className={style.mainBox}> {/* Added horizontal padding */}

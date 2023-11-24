@@ -17,7 +17,7 @@ async function getData() {
 
 export default async function Writings() {
 
-  const data = await getData();
+  // const data = await getData();
 
   return (
     <main style={{ overflow: 'hidden' }}>
@@ -34,7 +34,7 @@ export default async function Writings() {
       <p style={{ color: 'white', textAlign: 'center', padding: '0 16px 32px 16px' }}>
         A collection of the articles that I've written. I / Projk LLC may not have the rights to the content, as they are likely for other companies.
       </p>
-      <p>{Object.keys(data)}</p>
+      {/* <p>{Object.keys(data)}</p> */}
       <section className={styles.articleContainer}>
         <article className={styles.article}>
           <a href="google.com" target="_blank" style={{ textDecoration: 'none' }}>
