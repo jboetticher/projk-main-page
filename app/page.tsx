@@ -44,6 +44,7 @@ export default function Home() {
             href='https://github.com/jboetticher'
             className={`${styles.link} ${styles.iconButton} ${styles.green}`}
             style={{ animationDelay: `${0.8 + 3 * 0.5}s` }}
+            target='_blank'
           >
             <GitHubIcon fontSize='large' />
           </Link>
@@ -51,6 +52,7 @@ export default function Home() {
             href='https://www.linkedin.com/in/jeremy-boetticher/'
             className={`${styles.link} ${styles.iconButton} ${styles.purple}`}
             style={{ animationDelay: `${0.8 + 3 * 0.5}s`}}
+            target='_blank'
           >
             <LinkedInIcon fontSize='large' />
           </Link>

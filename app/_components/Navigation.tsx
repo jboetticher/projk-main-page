@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import style from "../_styles/navigation.module.css";
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode } from "react";
-import { UrlObject } from "url";
 
 export default function Navigation() {
   const currentPath = usePathname();

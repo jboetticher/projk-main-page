@@ -1,0 +1,60 @@
+.titleBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.articleContainer {
+    width: 100%;
+    padding: 0 20%;
+    margin-bottom: 64px;
+}
+
+.article {
+    display: flex; 
+    flex-direction: row;
+    margin-bottom: 16px;
+}
+
+.articleTitle {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 4px;
+    font-size: 22px;
+    position: relative;
+    display: inline-block;
+}
+
+.articleTitle::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--projk_purple);
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.articleTitle:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+@media (max-width: 1050px) {
+    .articleContainer {
+        padding: 0 10%;
+    }
+}
+
+@media (max-width: 500px) {
+    .articleContainer {
+        padding: 0 16px;
+    }
+    .articleTitle {
+        font-size: 18px;
+    }
+}

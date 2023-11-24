@@ -1,11 +1,25 @@
 .headerContainer {
     flex-direction: row;
     display: flex;
-    justify-content: space-around; /* or 'space-evenly' */
+    justify-content: space-around;
     margin-bottom: 32px;
     padding-left: 30%;
     padding-right: 30%;
     margin-top: 16px;
+}
+
+@media (max-width: 1050px) {
+    .headerContainer {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media (max-width: 500px) {
+    .headerContainer {
+        padding-left: 0%;
+        padding-right: 0%;
+    }
 }
 
 .headerLink {
