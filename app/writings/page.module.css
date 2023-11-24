@@ -1,3 +1,15 @@
+.scrollBox {
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.scrollBox::-webkit-scrollbar {
+    display: none;
+}
+
 .titleBox {
     display: flex;
     flex-direction: row;
