@@ -30,3 +30,17 @@
 .mkdwn-p {
     color: white;
 }
+
+.mkdwn-p a {
+    color: var(--projk_green);
+}
+
+.mkdwn-h3 {
+    color: white;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.mkdwn-a {
+    color: var(--projk_green);
+}

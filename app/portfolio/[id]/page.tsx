@@ -16,6 +16,9 @@ const MDXComponents = {
   p: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
     <p {...props} className={style['mkdwn-p']}>{props.children}</p>
   ),
+  h3: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
+    <h3 {...props} className={style['mkdwn-h3']}>{props.children}</h3>
+  )
 };
 
 type ProjectQuery = {
