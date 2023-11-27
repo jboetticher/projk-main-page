@@ -5,6 +5,7 @@ import { Box, Grid, IconButton, Modal, useMediaQuery, useTheme } from '@mui/mate
 import CloseIcon from '@mui/icons-material/Close';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import style from "./style.module.css";
 
 // TODO: turn into a carousel when small
 
@@ -33,6 +34,7 @@ const ImageContainer = ({ images, title }: { title: string, images: string[] }) 
           height: 'auto', // Maintains the aspect ratio of the image
           borderRadius: '16px'
         }}
+        onClick={() => { handleOpen(images[0]) }}
       />}
       <Grid container spacing={2} style={{ marginTop: '4px' }}>
         {isXsScreen &&
@@ -45,13 +47,7 @@ const ImageContainer = ({ images, title }: { title: string, images: string[] }) 
                 <div key={index}>
                   <img
                     src={image}
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      objectFit: 'cover',
-                      borderRadius: '8px',
-                      maxHeight: '300px'
-                    }}
+                    className={style.carouselImage}
                   />
                 </div>
               ))}
@@ -62,12 +58,7 @@ const ImageContainer = ({ images, title }: { title: string, images: string[] }) 
           <Grid item key={index} sm={6} md={4} xl={4} style={{ height: '150px', position: 'relative' }}>
             <img
               src={image}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                borderRadius: '8px'
-              }}
+              className={style.cardImage}
               onClick={() => { handleOpen(image) }}
             />
           </Grid>

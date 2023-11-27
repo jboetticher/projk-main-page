@@ -3,14 +3,17 @@
 import PageTransition from "../_components/PageTransition";
 import glitchStyle from "../_styles/glitch.module.css";
 import style from "./_styles/page.module.css";
-import { Grid } from '@mui/material';
+import { Grid, useMediaQuery, useTheme } from '@mui/material';
 import ProjectCard from "./_components/ProjectCard";
 import FilterBar from "./_components/FilterBar";
 import { useEffect, useRef, useState } from "react";
+import Navigation from "../_components/Navigation";
 
 export default function Portfolio() {
   const three = [0, 0, 0];
-  const twelve = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+  const theme = useTheme();
+  const isSmScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const exampleCard = (index: number) =>
     <ProjectCard key={index}
@@ -33,7 +36,7 @@ export default function Portfolio() {
   // Scrollbar data
   const hasWindow = () => { return typeof window === 'object' }
   const [scrollPosition, setScrollPosition] = useState<number>(0);
-  const [screenWidth, setScreenWidth] = useState(hasWindow() ? window.innerWidth: 1080);
+  const [screenWidth, setScreenWidth] = useState(hasWindow() ? window.innerWidth : 1080);
   const gridRef = useRef<HTMLDivElement>(null);
   const handleScroll = () => {
     if (gridRef.current) setScrollPosition(gridRef.current.scrollTop);
@@ -54,7 +57,7 @@ export default function Portfolio() {
 
   // Calculate title box width
   const IS_LARGE = screenWidth > 1535;
-  const TITLE_BOX_WIDTH = IS_LARGE ? 
+  const TITLE_BOX_WIDTH = IS_LARGE ?
     100 - Math.min(scrollPosition, 75) :
     100 - Math.min(scrollPosition, 70);
 
@@ -68,8 +71,9 @@ export default function Portfolio() {
   return (
     <main className={style.mainBox}> {/* Added horizontal padding */}
       <PageTransition />
+      {isSmScreen && <Navigation />}
       <Grid container spacing={2} className={style.mainGrid}>
-        <Grid item container xs={12} md={4} xl={3} spacing={2}> {/* Featured Projects */}
+        {!isSmScreen && <Grid item container xs={12} md={4} xl={3} spacing={2}> {/* Featured Projects */}
           <Grid item xs={12} sx={{ height: '120px' }}>
             <div className={style.titleBox} style={{ width: `calc(${TITLE_BOX_WIDTH}vw - 16px)` }}>
               <h1 data-text={"PORTFOLIO"}
@@ -88,14 +92,22 @@ export default function Portfolio() {
               {exampleCard(index)}
             </Grid>
           )}
-        </Grid>
+        </Grid>}
         <Grid item container xs={12} md={8} xl={9} spacing={2}
           className={style.scrollCardsContainer}
           ref={gridRef}
-        > {/* Scrollable Project Cards */}
-          <Grid item xs={12}>
-            <div style={{ height: '104px' }} />
-          </Grid>
+        >
+          {!isSmScreen && <Grid item xs={12}><div style={{ height: '104px' }} /></Grid>}
+          {isSmScreen && <Grid item xs={12}>
+            <div className={style.titleBox}>
+              <h1 data-text={"PORTFOLIO"}
+                className={`${glitchStyle.glitch} ${style.title}`}
+                style={{ fontSize: `${FONT_SIZE}px` }}
+              >
+                PORTFOLIO
+              </h1>
+            </div>
+          </Grid>}
           <Grid item xs={12}>
             <FilterBar />
           </Grid>
@@ -108,11 +120,6 @@ export default function Portfolio() {
                 imageUrl={p.image}
                 description={p.tagline}
               />
-            </Grid>
-          )}
-          {twelve.map((_, index) =>
-            <Grid item sm={12} md={6} xl={4} key={index}>
-              {exampleCard(index)}
             </Grid>
           )}
         </Grid>
