@@ -7,6 +7,7 @@ import style from "./page.module.css";
 import { JSX, ClassAttributes, HTMLAttributes } from "react";
 import PageTransition from "../../_components/PageTransition";
 import Navigation from "../../_components/Navigation";
+import ImageContainer from "./_components/ImageContainer";
 
 const MDXComponents = {
   h1: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
@@ -24,6 +25,7 @@ type ProjectQuery = {
   tagline: string;
   images: string[];
   description: string;
+  link: string;
 };
 
 const ProjectPage = async ({ params }: { params: { id: string } }) => {
@@ -43,7 +45,7 @@ const ProjectPage = async ({ params }: { params: { id: string } }) => {
           <div>
             {data.tags.map((t, i) => <Tag key={i} tag={t} />)}
           </div>
-          <a href="link" className={style.linkButton}>
+          <a href={data.link} className={style.linkButton} target="_blank">
             CHECK IT OUT	↗
           </a>
           <div className={style.mkdwnContainer}>
@@ -51,16 +53,7 @@ const ProjectPage = async ({ params }: { params: { id: string } }) => {
           </div>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <img
-            alt={data.title}
-            src={data.images[0]}
-            style={{
-              width: '100%', // Makes the image scale to the width of the Grid item
-              height: 'auto', // Maintains the aspect ratio of the image
-              borderRadius: '16px'
-            }}
-            key={data.title}
-          />
+          <ImageContainer images={data.images} title={data.title} />
         </Grid>
       </Grid>
     </main>
