@@ -18,6 +18,12 @@ const MDXComponents = {
   ),
   h3: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
     <h3 {...props} className={style['mkdwn-h3']}>{props.children}</h3>
+  ),
+  ul: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
+    <ul {...props} className={style['mkdwn-ul']}>{props.children}</ul>
+  ),
+  li: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
+    <li {...props} className={style['mkdwn-li']}>{props.children}</li>
   )
 };
 

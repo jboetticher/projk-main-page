@@ -29,6 +29,7 @@
 
 .mkdwn-p {
     color: white;
+    margin-bottom: 8px;
 }
 
 .mkdwn-p a {
@@ -43,4 +44,13 @@
 
 .mkdwn-a {
     color: var(--projk_green);
+}
+
+.mkdwn-li {
+    color: white;
+}
+
+.mkdwn-ul {
+    color: white;
+    margin: 16px 0 16px 16px;
 }
