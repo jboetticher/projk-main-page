@@ -3,7 +3,11 @@ import { Chip, Tooltip } from '@mui/material';
 const TAG_TO_COLOR: { [key: string]: { color: string; tooltip: string; }; } = {
   "Venture": {
     "color": "#315f26",
-    "tooltip": "A venture & company separate from the members of Projk."
+    "tooltip": "A venture separate from Projk LLC."
+  },
+  "Paid Work": {
+    "color": "#708238",
+    "tooltip": "Work done for a company or a contractor (IP not owned by me)."
   },
   "HYPER": {
     "color": "#ff8000",
@@ -31,15 +35,11 @@ const TAG_TO_COLOR: { [key: string]: { color: string; tooltip: string; }; } = {
   },
   "Finished": {
     "color": "#1cc54f",
-    "tooltip": "This is completed, and work probably won't continue."
+    "tooltip": "This is completed, and work won't continue."
   },
   "Deceased": {
     "color": "#d70000",
     "tooltip": "No longer exists. Don't cry for me Argentina..."
-  },
-  "J & K": {
-    "color": "#684663",
-    "tooltip": "Made in equal parts by both Jeremy and Kevin."
   },
   "For Kicks": {
     "color": "#ff6a9b",
@@ -48,6 +48,30 @@ const TAG_TO_COLOR: { [key: string]: { color: string; tooltip: string; }; } = {
   "bL0cKchAiN!": {
     "color": "#03bafc",
     "tooltip": "It used to be a buzzword on resumes. Now artists on twitter hate you."
+  },
+  "JavaScript": {
+    "color": "#c4a600",
+    "tooltip": "The best and worst thing that has happened to frontends."
+  },
+  "C#": {
+    "color": "#400800",
+    "tooltip": "It's like Java, but cooler."
+  },
+  "TypeScript": {
+    "color": "#3178c6",
+    "tooltip": "This language is just JavaScript when impatient."
+  }, 
+  "Solidity": {
+    "color": "#AA6746",
+    "tooltip": "Gas golfing should be integrated into leetcode."
+  },
+  "Rust": {
+    "color": "#ff8a4c",
+    "tooltip": "The chad crab language."
+  },
+  "PHP": {
+    "color": "#4F5B93",
+    "tooltip": "Who designing this language needed variables of variables?"
   }
 };
 
