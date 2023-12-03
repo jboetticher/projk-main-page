@@ -65,6 +65,10 @@ const TAG_TO_COLOR: { [key: string]: { color: string; tooltip: string; }; } = {
     "color": "#AA6746",
     "tooltip": "Gas golfing should be integrated into leetcode."
   },
+  "Smart Contract": {
+    "color": "#008080",
+    "tooltip": "I don't know, it doesn't seem that smart to me."
+  },
   "Rust": {
     "color": "#ff8a4c",
     "tooltip": "The chad crab language."
