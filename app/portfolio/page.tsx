@@ -10,19 +10,8 @@ import { useEffect, useRef, useState } from "react";
 import Navigation from "../_components/Navigation";
 
 export default function Portfolio() {
-  const three = [0, 0, 0];
-
   const theme = useTheme();
   const isSmScreen = useMediaQuery(theme.breakpoints.down('md'));
-
-  const exampleCard = (index: number) =>
-    <ProjectCard key={index}
-      id='dictater'
-      title='Doinktater | 4X Potato Strategy'
-      tags={['C#', 'Hyper Projk']}
-      imageUrl='https://ksr-ugc.imgix.net/assets/027/592/492/c58e1f28c1eec30d77b7d968bf716a3f_original.png?ixlib=rb-4.1.0&crop=faces&w=1024&h=576&fit=crop&v=1577397933&auto=format&frame=1&q=92&s=778a0882f2e3032c450a98c0204d5624'
-      description="DicTater is a strategic micromanagement game about facist potatoes with over 10k downloads."
-    />
 
   // Query for projects
   const [projects, setProjects] = useState<MultiProjectQuery[]>([]);
@@ -87,9 +76,15 @@ export default function Portfolio() {
           <Grid item xs={12}>
             <h4 className={style.subtitle}>FEATURED</h4>
           </Grid>
-          {three.map((_, index) =>
+          {projects.filter(x => x.id == 'dictater' || x.id == 'mrl' || x.id == 'hark').map((p, index) =>
             <Grid item sm={12} key={index}>
-              {exampleCard(index)}
+              <ProjectCard key={index}
+                id={p.id}
+                title={p.title}
+                tags={p.tags}
+                imageUrl={p.image}
+                description={p.tagline}
+              />
             </Grid>
           )}
         </Grid>}
