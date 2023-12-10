@@ -57,6 +57,22 @@ export default function Portfolio() {
     60 - Math.max(0, LARGE_SUBTRACTION_AMOUNT * (Math.min(scrollPosition, 70) / 70)) :
     60 - Math.max(0, SMALL_SUBTRACTION_AMOUNT * (Math.min(scrollPosition, 70) / 70));
 
+  // Get Tags
+  const excludedTags = ['HYPER', 'MAJOR', 'MINOR', 'MINI', 'MICRO'];
+  const avalableTags = Array.from(new Set(projects.flatMap(x => x.tags).sort())).filter(x => !excludedTags.includes(x));
+  const [currentTags, setCurrentTags] = useState<string[]>([]);
+  function includedInTags(value: MultiProjectQuery): boolean {
+    for (let t of value.tags) if (currentTags.includes(t)) return true;
+    return false;
+  }
+
+  // Filter for projects to display
+  const [displayedProjects, setDisplayedProjects] = useState<MultiProjectQuery[]>([]);
+  useEffect(() => {
+    console.log('current tags (page.tsx):', currentTags);
+    setDisplayedProjects(currentTags.length == 0 ? projects : projects.filter(includedInTags));
+  }, [projects, currentTags]);
+
   return (
     <main className={style.mainBox}> {/* Added horizontal padding */}
       <PageTransition />
@@ -104,9 +120,9 @@ export default function Portfolio() {
             </div>
           </Grid>}
           <Grid item xs={12}>
-            <FilterBar />
+            <FilterBar availableTags={avalableTags} currentTags={currentTags} setCurrentTags={setCurrentTags} />
           </Grid>
-          {projects?.map((p, index) =>
+          {displayedProjects?.map((p, index) =>
             <Grid item sm={12} md={6} xl={4} key={index}>
               <ProjectCard key={index}
                 id={p.id}

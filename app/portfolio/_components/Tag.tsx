@@ -1,4 +1,4 @@
-import { Chip, Tooltip } from '@mui/material';
+import { Chip, SxProps, Theme, Tooltip } from '@mui/material';
 
 const TAG_TO_COLOR: { [key: string]: { color: string; tooltip: string; }; } = {
   "Venture": {
@@ -79,7 +79,7 @@ const TAG_TO_COLOR: { [key: string]: { color: string; tooltip: string; }; } = {
   }
 };
 
-export function Tag({ tag }: { tag: string; }) {
+export function Tag({ tag, onClick, sx }: { tag: string; onClick?: () => void; sx?: SxProps<Theme> }) {
   const tagData = tagToColor(tag);
   return (
     <Tooltip key={tag} title={tagData.tooltip}
@@ -89,6 +89,7 @@ export function Tag({ tag }: { tag: string; }) {
           fontFamily: 'Lexend, sans-serif'
         }
       }}
+      onClick={onClick}
     >
       <Chip
         label={tag}
@@ -104,6 +105,7 @@ export function Tag({ tag }: { tag: string; }) {
             fontSize: '0.75rem',
             padding: '0 4px', // Custom padding for the label
           },
+          ...sx
         }} />
     </Tooltip>
   );
