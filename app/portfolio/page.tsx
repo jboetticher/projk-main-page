@@ -58,7 +58,7 @@ export default function Portfolio() {
     60 - Math.max(0, SMALL_SUBTRACTION_AMOUNT * (Math.min(scrollPosition, 70) / 70));
 
   // Get Tags
-  const excludedTags = ['HYPER', 'MAJOR', 'MINOR', 'MINI', 'MICRO'];
+  const excludedTags = ['HYPER', 'MAJOR', 'MINOR', 'MINI', 'MICRO', 'Finished'];
   const avalableTags = Array.from(new Set(projects.flatMap(x => x.tags).sort())).filter(x => !excludedTags.includes(x));
   const [currentTags, setCurrentTags] = useState<string[]>([]);
   function includedInTags(value: MultiProjectQuery): boolean {

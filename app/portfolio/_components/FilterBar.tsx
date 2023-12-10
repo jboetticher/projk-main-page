@@ -17,14 +17,10 @@ export default function FilterBar({ availableTags, currentTags, setCurrentTags }
 
   const handleMenuClick = (tag: string) => {
     if (!currentTags.includes(tag)) setCurrentTags([...currentTags, tag]);
-    console.log('Setting current tags:', currentTags)
   }
 
   const handleTagClick = (tag: string) => {
-    console.log('Trynna remove', tag, 'from', currentTags)
-    if (currentTags.includes(tag)) {
-      setCurrentTags(currentTags.filter(t => t != tag));
-    }
+    if (currentTags.includes(tag)) setCurrentTags(currentTags.filter(t => t != tag));
   }
 
   return (

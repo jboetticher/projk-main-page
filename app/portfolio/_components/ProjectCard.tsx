@@ -27,7 +27,13 @@ export default function ProjectCard({ id, title, tags, imageUrl, description }: 
               {title}
             </h5>
           </div>
-          {tags.map((tag, i) => <Tag key={i} tag={tag} />)}
+          <div style={{
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
+          }}>
+            {tags.map((tag, i) => <Tag key={i} tag={tag} />)}
+          </div>
           <p className={style.text}>{description}</p>
         </CardContent>
       </Card>
