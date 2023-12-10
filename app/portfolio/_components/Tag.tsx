@@ -59,7 +59,7 @@ const TAG_TO_COLOR: { [key: string]: { color: string; tooltip: string; }; } = {
   },
   "TypeScript": {
     "color": "#3178c6",
-    "tooltip": "This language is just JavaScript when impatient."
+    "tooltip": "Just spam 'any'. What could go wrong?"
   }, 
   "Solidity": {
     "color": "#AA6746",
@@ -76,6 +76,10 @@ const TAG_TO_COLOR: { [key: string]: { color: string; tooltip: string; }; } = {
   "PHP": {
     "color": "#4F5B93",
     "tooltip": "Who designing this language needed variables of variables?"
+  },
+  "Polkadot": {
+    "color": "#E6007A",
+    "tooltip": "DR GAVIN WOOOOOOOOOOOOD!!!"
   }
 };
 

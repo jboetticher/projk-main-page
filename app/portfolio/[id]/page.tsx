@@ -4,25 +4,24 @@ import { Tag } from "../_components/Tag";
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
 import style from "./page.module.css";
-import { JSX, ClassAttributes, HTMLAttributes } from "react";
 import PageTransition from "../../_components/PageTransition";
 import Navigation from "../../_components/Navigation";
 import ImageContainer from "./_components/ImageContainer";
 
 const MDXComponents = {
-  h1: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
+  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1 {...props} className={style['mkdwn-h1']}>{props.children}</h1>
   ),
-  p: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
+  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p {...props} className={style['mkdwn-p']}>{props.children}</p>
   ),
-  h3: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
+  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3 {...props} className={style['mkdwn-h3']}>{props.children}</h3>
   ),
-  ul: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
+  ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
     <ul {...props} className={style['mkdwn-ul']}>{props.children}</ul>
   ),
-  li: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
+  li: (props: React.HTMLAttributes<HTMLLIElement>) => (
     <li {...props} className={style['mkdwn-li']}>{props.children}</li>
   )
 };
