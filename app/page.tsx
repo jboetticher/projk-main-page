@@ -14,7 +14,7 @@ export default function Home() {
   const links = [
     { link: 'portfolio', title: 'Portfolio' },
     { link: 'writings', title: 'Writings' },
-    { link: 'skills', title: 'Skills' },
+    // { link: 'skills', title: 'Skills' },
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function Home() {
           <Link
             href='https://github.com/jboetticher'
             className={`${styles.link} ${styles.iconButton} ${styles.green}`}
-            style={{ animationDelay: `${0.8 + 3 * 0.5}s` }}
+            style={{ animationDelay: `${0.8 + 2 * 0.5}s` }}
             target='_blank'
           >
             <GitHubIcon fontSize='large' />
@@ -51,7 +51,7 @@ export default function Home() {
           <Link
             href='https://www.linkedin.com/in/jeremy-boetticher/'
             className={`${styles.link} ${styles.iconButton} ${styles.purple}`}
-            style={{ animationDelay: `${0.8 + 3 * 0.5}s`}}
+            style={{ animationDelay: `${0.8 + 2 * 0.5}s`}}
             target='_blank'
           >
             <LinkedInIcon fontSize='large' />

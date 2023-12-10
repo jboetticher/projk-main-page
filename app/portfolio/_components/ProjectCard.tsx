@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { Card, CardContent, CardMedia, Skeleton } from '@mui/material';
 import style from '../_styles/projectcard.module.css';
 import { Tag } from './Tag';
 import Link from 'next/link';
@@ -39,4 +39,10 @@ export default function ProjectCard({ id, title, tags, imageUrl, description }: 
       </Card>
     </Link>
   );
+}
+
+export function LoadingCard() {
+  return (
+    <Skeleton className={style.projectCard} sx={{ backgroundColor: 'var(--projk_foreground)' }} />
+  )
 }

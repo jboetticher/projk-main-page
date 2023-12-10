@@ -13,7 +13,8 @@
 
 .linkButton:hover {
     transform: scale(1.04);
-    box-shadow: 0 0 10px rgba(128, 0, 128, 0.5); /* Adjust values as needed */
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+    /* Adjust values as needed */
 }
 
 .mkdwnContainer {
@@ -53,4 +54,24 @@
 .mkdwn-ul {
     color: white;
     margin: 16px 0 16px 16px;
+}
+
+.hideOnMobile {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    .hideOnMobile {
+        display: block;
+    }
+}
+
+.displayOnMobile {
+    display: block;
+}
+
+@media (min-width: 600px) {
+    .displayOnMobile {
+        display: none;
+    }
 }

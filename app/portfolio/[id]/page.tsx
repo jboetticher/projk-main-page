@@ -53,6 +53,9 @@ const ProjectPage = async ({ params }: { params: { id: string } }) => {
           <div>
             {data.tags.map((t, i) => <Tag key={i} tag={t} />)}
           </div>
+          <div className={style.displayOnMobile}>
+            <ImageContainer images={data.images} title={data.title} />
+          </div>
           <a href={data.link} className={style.linkButton} target="_blank">
             CHECK IT OUT	↗
           </a>
@@ -60,7 +63,7 @@ const ProjectPage = async ({ params }: { params: { id: string } }) => {
             <MDXRemote source={data.description} components={MDXComponents} />
           </div>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={6} className={style.hideOnMobile}>
           <ImageContainer images={data.images} title={data.title} />
         </Grid>
       </Grid>

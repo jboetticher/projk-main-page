@@ -4,7 +4,7 @@ import PageTransition from "../_components/PageTransition";
 import glitchStyle from "../_styles/glitch.module.css";
 import style from "./_styles/page.module.css";
 import { Grid, useMediaQuery, useTheme } from '@mui/material';
-import ProjectCard from "./_components/ProjectCard";
+import ProjectCard, { LoadingCard } from "./_components/ProjectCard";
 import FilterBar from "./_components/FilterBar";
 import { useEffect, useRef, useState } from "react";
 import Navigation from "../_components/Navigation";
@@ -92,17 +92,23 @@ export default function Portfolio() {
           <Grid item xs={12}>
             <h4 className={style.subtitle}>FEATURED</h4>
           </Grid>
-          {projects.filter(x => x.id == 'dictater' || x.id == 'mrl' || x.id == 'hark').map((p, index) =>
-            <Grid item sm={12} key={index}>
-              <ProjectCard key={index}
-                id={p.id}
-                title={p.title}
-                tags={p.tags}
-                imageUrl={p.image}
-                description={p.tagline}
-              />
-            </Grid>
-          )}
+          {projects.length == 0 ?
+            (new Array(3).fill(3)).map((_, index) =>
+              <Grid item sm={12} key={index}>
+                <LoadingCard key={index} />
+              </Grid>
+            ) :
+            projects.filter(x => x.id == 'dictater' || x.id == 'mrl' || x.id == 'hark').map((p, index) =>
+              <Grid item sm={12} key={index}>
+                <ProjectCard key={index}
+                  id={p.id}
+                  title={p.title}
+                  tags={p.tags}
+                  imageUrl={p.image}
+                  description={p.tagline}
+                />
+              </Grid>
+            )}
         </Grid>}
         <Grid item container xs={12} md={8} xl={9} spacing={2}
           className={style.scrollCardsContainer}
@@ -122,17 +128,23 @@ export default function Portfolio() {
           <Grid item xs={12}>
             <FilterBar availableTags={avalableTags} currentTags={currentTags} setCurrentTags={setCurrentTags} />
           </Grid>
-          {displayedProjects?.map((p, index) =>
-            <Grid item sm={12} md={6} xl={4} key={index}>
-              <ProjectCard key={index}
-                id={p.id}
-                title={p.title}
-                tags={p.tags}
-                imageUrl={p.image}
-                description={p.tagline}
-              />
-            </Grid>
-          )}
+          {projects.length == 0 ?
+            (new Array(9).fill(0)).map((_, index) =>
+              <Grid item xs={12} sm={12} md={6} xl={4} key={index}>
+                <LoadingCard />
+              </Grid>
+            ) :
+            displayedProjects?.map((p, index) =>
+              <Grid item xs={12} sm={12} md={6} xl={4} key={index}>
+                <ProjectCard key={index}
+                  id={p.id}
+                  title={p.title}
+                  tags={p.tags}
+                  imageUrl={p.image}
+                  description={p.tagline}
+                />
+              </Grid>
+            )}
         </Grid>
       </Grid>
     </main>

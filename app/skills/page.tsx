@@ -13,9 +13,9 @@ export default function Home() {
     <main style={{ overflow: 'hidden' }}>
       <PageTransition />
       <Navigation />
-      <h1 style={{ color: 'white' }}>this is the skills page!</h1>
+      <h1 style={{ color: 'white' }}>You're not supposed to be here.</h1>
+      <div style={{ color: 'white' }}>But you're here nonetheless. Welcome!</div>
       {x.map((data, i) => <p key={i} style={{ color: 'white' }}>{data}</p>)}
-      <Link href='/'>go back to home</Link>
     </main> 
   );
 }
