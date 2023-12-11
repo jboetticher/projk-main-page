@@ -1,0 +1,50 @@
+.mainBox {
+    overflow: hidden;
+    padding: 0 20px 0 20px;
+    max-height: 100vh;
+}
+
+.titleBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.title {
+    font-size: 60px;
+    letter-spacing: 0.25em;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    /* Makes the text all caps */
+    letter-spacing: 0.3em;
+    /* Spaces out the letters significantly */
+    text-align: center;
+    /* Centers the text */
+    color: white;
+    padding-bottom: 10px;
+    user-select: none;
+}
+
+.scrollCardsContainer {
+    /* Calculate max height based off of the title */
+    /* max-height: calc(100vh - (72.5px + 60px) + 24px); */
+    max-height: calc(100vh + 20px);
+    overflow-y: auto;
+    min-height: 100vh;
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.scrollCardsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.mainGrid {
+    /* 72.5px = title text, 60px = margin, 24px = padding offset??? */
+    /* max-height: calc(100vh - (62.5px + 60px)); */
+}

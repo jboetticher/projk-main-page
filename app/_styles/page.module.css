@@ -1,0 +1,67 @@
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 5em;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    /* Makes the text all caps */
+    letter-spacing: 0.3em;
+    /* Spaces out the letters significantly */
+    text-align: center;
+    /* Centers the text */
+    color: white;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    user-select: none;
+}
+
+.linkContainer {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.link {
+    opacity: 0;
+    animation: fadeInLeft 1s forwards;
+    display: inline-block;
+    font-size: 24px;
+    padding-bottom: 1em;
+    /* Additional styling for your links */
+}
+
+.iconContainer {
+    display: flex;
+    justify-content: center; /* Horizontally centers the flex items */
+    gap: 20px;
+    /* Add any other necessary styles */
+}
+
+.iconButton {
+    color: white;
+    transition: 500ms;
+}
+
+.iconButton.green:hover {
+    color: var(--projk_green);
+}
+
+.iconButton.purple:hover {
+    color: var(--projk_purple);
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

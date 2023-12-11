@@ -1,0 +1,21 @@
+.projectCard {
+    height: calc((100vh - 160px - (16px * 3)) / 3)
+}
+
+@media (max-height: 916px) {
+    .projectCard {
+        height: calc((100vh - 160px - (16px * 2)) / 2)
+    }
+  }
+
+.text {
+    color: white;
+}
+
+.cardTitle {
+    color: white;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, .25);
+    display: inline;
+    padding: 0 8px 4px 16px;
+}
