@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { sql } from '@vercel/postgres';
 
+export const revalidate = 120;
 export async function GET(request: Request) {
   try {
     const result = await sql`SELECT id, title, tags, tagline, images[1] as image FROM projects`;
