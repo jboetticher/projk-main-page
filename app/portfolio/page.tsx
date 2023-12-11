@@ -46,6 +46,7 @@ export default function Portfolio() {
 
   // Calculate title box width
   const IS_LARGE = screenWidth > 1535;
+  const IS_TINY = screenWidth < 900;
   const TITLE_BOX_WIDTH = IS_LARGE ?
     100 - Math.min(scrollPosition, 75) :
     100 - Math.min(scrollPosition, 70);
@@ -55,7 +56,8 @@ export default function Portfolio() {
   const SMALL_SUBTRACTION_AMOUNT = 25 * ((1535 - screenWidth) / 635);
   const FONT_SIZE = IS_LARGE ?
     60 - Math.max(0, LARGE_SUBTRACTION_AMOUNT * (Math.min(scrollPosition, 70) / 70)) :
-    60 - Math.max(0, SMALL_SUBTRACTION_AMOUNT * (Math.min(scrollPosition, 70) / 70));
+    IS_TINY ? 40 :
+      60 - Math.max(0, SMALL_SUBTRACTION_AMOUNT * (Math.min(scrollPosition, 70) / 70));
 
   // Get Tags
   const excludedTags = ['HYPER', 'MAJOR', 'MINOR', 'MINI', 'MICRO', 'Finished'];
