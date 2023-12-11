@@ -22,7 +22,7 @@ export default function ProjectCard({ id, title, tags, imageUrl, description }: 
         >
         </CardMedia>
         <CardContent sx={{ paddingTop: 0, '& MuiCardContent-root:last-child': { paddingBottom: 0 } }}>
-          <div style={{ height: 0, position: 'relative', top: '-26px', left: '-16px' }}>
+          <div style={{ height: 0, position: 'relative', top: '-26px', left: '-16px', maxWidth: 'calc(100% + 32px)' }}>
             <h5 className={style.cardTitle}>
               {title}
             </h5>

@@ -32,8 +32,9 @@
 .scrollCardsContainer {
     /* Calculate max height based off of the title */
     /* max-height: calc(100vh - (72.5px + 60px) + 24px); */
-    max-height: 100vh;
+    max-height: calc(100vh + 20px);
     overflow-y: auto;
+    min-height: 100vh;
 
     /* Hide scrollbar for IE, Edge, and Firefox */
     -ms-overflow-style: none;

@@ -23,7 +23,10 @@ const MDXComponents = {
   ),
   li: (props: React.HTMLAttributes<HTMLLIElement>) => (
     <li {...props} className={style['mkdwn-li']}>{props.children}</li>
-  )
+  ),
+  img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    <img {...props} className={style['mkdwn-img']} />
+  ),
 };
 
 type ProjectQuery = {

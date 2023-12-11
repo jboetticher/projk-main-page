@@ -56,6 +56,12 @@
     margin: 16px 0 16px 16px;
 }
 
+.mkdwn-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 .hideOnMobile {
     display: none;
 }
